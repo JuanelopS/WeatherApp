@@ -1,13 +1,15 @@
-* {
+$background: linear-gradient(white 80%,#9198e5 );
+
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+body{
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(white 80%, #9198e5);
-}/*# sourceMappingURL=index.css.map */
+  background: $background;
+}

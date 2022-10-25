@@ -51,7 +51,7 @@ export const ActualPosition = () => {
         <h3> 
           {
             isLoading ? 
-            <ThreeBody className='loading'/>
+            <ThreeBody size={35} color="navy" />
             :
             `${city.city} ${city.countryCode} (${weather.latitude} - ${weather.longitude})`
           }
