@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ThreeBody } from '@uiball/loaders';
-import { weatherCodes } from '../helpers/weatherCodes';
+import { WeatherInfo } from './WeatherInfo';
 import '../styles/ActualPosition.css';
 
 export const ActualPosition = () => {
@@ -42,41 +41,11 @@ export const ActualPosition = () => {
       });
     } 
 
-  }, [])
-
+  }, []);
 
   return (
     <div className='geolocation-weather-card'>
-      <div className='geolocation-weather-text'>
-        <h3> 
-          {
-            isLoading ? 
-            <ThreeBody size={35} color="navy" />
-            :
-            `${city.city} ${city.countryCode} (${weather.latitude} - ${weather.longitude})`
-          }
-        </h3>
-        <h3>
-          {
-            !(isLoading) && `${weatherCodes[weather.current_weather.weathercode]}`
-          }
-        </h3>
-        <h3>
-          {
-          !(isLoading) && `Current temperature: ${weather.current_weather.temperature}º`
-          }
-        </h3>
-        <h3>
-          {
-          !(isLoading) && `Wind Speed: ${weather.current_weather.windspeed}km/h`
-          }
-        </h3>
-        <h3>
-          {
-          !(isLoading) && `Rain: ${weather.daily.precipitation_sum[0]} mm`
-          }
-        </h3>
-      </div>
+      <WeatherInfo loading={ isLoading } weather={ weather } city = { city }/>
     </div>
   )
 }
