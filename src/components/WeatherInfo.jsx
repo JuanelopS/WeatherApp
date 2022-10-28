@@ -1,11 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import { weatherCodes } from '../helpers/weatherCodes';
+import { weatherImages } from '../helpers/weatherImages';
 import { ThreeBody } from '@uiball/loaders';
+
 
 export const WeatherInfo = ({ loading, weather, city }) => {
   return (
       <div className='geolocation-weather-text'>
+        
+        {!loading && (<img className='weather-image' src={'./weather-images/' + weatherImages[weather.current_weather.weathercode]}/>)}
         <h3> 
           {
             loading ? 

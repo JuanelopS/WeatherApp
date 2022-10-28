@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { ActualPosition } from '../components/ActualPosition';
 import '../styles/HomePage.scss';
 
 const HomePage = props => {
@@ -7,7 +7,9 @@ const HomePage = props => {
     <div className='homepage'>
       <header>Header</header>
       <main>Main</main>
-      <aside>Aside</aside>
+      <aside>
+        <ActualPosition />
+      </aside>
       <footer>Footer</footer>
     </div>
   )

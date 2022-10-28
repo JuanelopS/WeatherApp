@@ -1,9 +1,5 @@
 .geolocation-weather-card {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
   flex-direction: column;
-  width: 300px;
-  height: 250px;
+  justify-content: center;
 }/*# sourceMappingURL=ActualPosition.css.map */

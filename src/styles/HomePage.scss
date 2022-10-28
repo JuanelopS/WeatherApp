@@ -14,29 +14,25 @@
         'aside footer footer';
       grid-template-columns: 1fr 3fr;
     }
+  header {
+    grid-area: header;
+  }
+  
+  main {
+    grid-area: main;
+  }
+  
+  aside {
+    grid-area: aside;
+  
+  }
+  
+  footer{
+    grid-area: footer;
+  }
 }
 
 
 .homepage > * {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: 1px solid black;
-}
-
-header {
-  grid-area: header;
-}
-
-main {
-  grid-area: main;
-}
-
-aside {
-  grid-area: aside;
-  min-width: 300px;
-}
-
-footer{
-  grid-area: footer;
 }
