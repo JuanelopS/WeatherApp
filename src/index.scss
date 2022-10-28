@@ -1,5 +1,3 @@
-$background: linear-gradient(white 80%,#9198e5 );
-
 *{
   margin: 0;
   padding: 0;
@@ -8,8 +6,4 @@ $background: linear-gradient(white 80%,#9198e5 );
 
 body{
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: $background;
 }
