@@ -1,14 +1,48 @@
 .homepage {
+  font-family: "Raleway", sans-serif;
+  display: grid;
+  grid-template-areas: "aside" "header" "main";
+  color: #E7E7EB;
+}
+.homepage header {
+  grid-area: header;
+}
+.homepage main {
+  grid-area: main;
+}
+.homepage aside {
+  grid-area: aside;
+  height: 100vh;
+  background: #1E213A url("../assets/Cloud-background.png") no-repeat 80% 20%;
+  padding: 1rem;
+}
+.homepage aside .actual-weather-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.homepage aside .weather-info {
+  display: flex;
+  justify-content: center;
+}
+.homepage aside .weather-image {
+  margin: 120px 0;
+}
+.homepage aside .weather-info-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+.homepage aside .actual-temp {
+  font-size: 8rem;
 }
 
 @media (min-width: 600px) {
   .homepage {
-    display: grid;
     height: 100vh;
-    grid-template-areas: "aside header header" "aside main main" "aside footer footer";
+    grid-template-areas: "aside header header" "aside main main";
     grid-template-columns: 1fr 3fr;
+    grid-template-rows: 2fr 3fr;
   }
   header {
     grid-area: header;
@@ -18,9 +52,6 @@
   }
   aside {
     grid-area: aside;
-  }
-  footer {
-    grid-area: footer;
   }
 }
 .homepage > * {
