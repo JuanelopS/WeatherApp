@@ -12,29 +12,55 @@
 }
 .homepage aside {
   grid-area: aside;
-  height: 100vh;
-  background: #1E213A url("../assets/Cloud-background.png") no-repeat 80% 20%;
-  padding: 1rem;
+  position: relative;
+  background-color: #1E213A;
+  padding: 2rem 0;
+  min-height: 100vh;
 }
 .homepage aside .actual-weather-buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 2rem;
+}
+.homepage aside .actual-weather-buttons .gps-icon {
+  cursor: pointer;
+}
+.homepage aside .geolocation-weather-card {
+  z-index: 1;
+}
+.homepage aside .weather-loading {
+  margin-top: 200px;
 }
 .homepage aside .weather-info {
   display: flex;
   justify-content: center;
 }
-.homepage aside .weather-image {
-  margin: 120px 0;
-}
 .homepage aside .weather-info-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  z-index: 1;
 }
 .homepage aside .actual-temp {
   font-size: 8rem;
+}
+.homepage aside::before {
+  content: "";
+  position: absolute;
+  background: url("../assets/Cloud-background.png") no-repeat 80% 20%;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.homepage main {
+  background-color: lightblue;
+}
+.homepage header {
+  background-color: lightcyan;
 }
 
 @media (min-width: 600px) {

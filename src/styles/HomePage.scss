@@ -15,14 +15,29 @@
     }
     aside{
       grid-area: aside;
-      height: 100vh;
-      background: #1E213A url('../assets/Cloud-background.png') no-repeat 80% 20%;
-      padding: 1rem;
+      position: relative;
+      background-color: #1E213A;
+      padding: 2rem 0;
+      min-height: 100vh;
       
       .actual-weather-buttons{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 0 2rem;
+
+        .gps-icon {
+          cursor: pointer;
+        }
+      }
+
+      .geolocation-weather-card {
+        z-index: 1;
+      }
+
+    
+      .weather-loading{
+        margin-top: 200px;
       }
 
       .weather-info {
@@ -30,19 +45,36 @@
         justify-content: center;
       }
 
-      .weather-image {
-        margin: 120px 0;
-      }
-
       .weather-info-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        text-align: center;
+        gap: 1rem;
+        z-index: 1;
       }
 
       .actual-temp {
         font-size: 8rem;
       }
+    }
+
+    aside::before {
+      content: '';
+      position: absolute;
+      background: url('../assets/Cloud-background.png') no-repeat 80% 20%;
+      opacity: 0.5;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    main {
+      background-color: lightblue;
+    }
+
+    header {
+      background-color: lightcyan;
     }
 }
 
@@ -68,6 +100,7 @@
   
   }
 }
+
 
 
 .homepage > * {
