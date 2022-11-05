@@ -1,0 +1,39 @@
+.next-weather {
+  display: grid;
+  gap: 4rem;
+  grid-auto-flow: dense;
+  grid-auto-rows: 250px;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); 
+  padding: 3rem;
+  font-size: 1.2rem;
+  
+  .card-day {
+    background-color: #1E213A;
+    
+    .card-day-date {
+      text-align: center;
+      padding-top: 1.5rem;
+    }
+
+    .card-day-image {
+      padding: 1rem 2rem;
+    }
+
+    .card-day-temps {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+  }
+
+}
+
+
+.loading-next-weather{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+}
+

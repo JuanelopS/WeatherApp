@@ -7,18 +7,11 @@
     'main';
   color: #E7E7EB;
 
-    header {
-      grid-area: header;
-    }
-    main {
-      grid-area: main;
-    }
     aside{
       grid-area: aside;
       position: relative;
       background-color: #1E213A;
       padding: 2rem 0;
-      min-height: 100vh;
       
       .actual-weather-buttons{
         display: flex;
@@ -52,45 +45,52 @@
         text-align: center;
         gap: 1rem;
         z-index: 1;
+        margin-bottom: 5rem;
       }
 
       .actual-temp {
         font-size: 8rem;
+        margin-bottom: 5rem;
       }
     }
 
     aside::before {
       content: '';
       position: absolute;
-      background: url('../assets/Cloud-background.png') no-repeat 80% 20%;
-      opacity: 0.5;
+      background: url('../assets/Cloud-background.png') no-repeat 80% 60%;
+      opacity: 0.3;
       width: 100%;
-      height: 100%;
+      height: 70%;
       z-index: 0;
     }
 
     main {
-      background-color: lightblue;
-    }
+      background-color: #100E1D;
+    } 
 
     header {
-      background-color: lightcyan;
+      background-color: #100E1D;
+      min-height: 500px;
+      
     }
 }
 
+
 @media (min-width: 600px){
   .homepage {
-      height: 100vh;
       grid-template-areas: 
         'aside header header'
         'aside main main';
       grid-template-columns: 1fr 3fr;
       grid-template-rows: 2fr 3fr;
+      max-height: 100vh;
     }
+
   header {
     grid-area: header;
+    padding: 0 7rem;
   }
-  
+
   main {
     grid-area: main;
   }
@@ -99,10 +99,4 @@
     grid-area: aside;
   
   }
-}
-
-
-
-.homepage > * {
-  border: 1px solid black;
 }

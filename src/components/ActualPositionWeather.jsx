@@ -1,55 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import actualPosition from '../services/actualPosition';
-import fetchCity from '../services/fetchCity';
-import fetchWeather from '../services/fetchWeather';
-
 import { ThreeBody } from '@uiball/loaders';
 import { weatherCodes } from '../helpers/weatherCodes';
 import { weatherImages } from '../helpers/weatherImages';
 import RoomIcon from '@mui/icons-material/Room';
 
 
-export const ActualPositionWeather = () => {
-
-  const [ lat, setLat ] = useState();
-  const [ long, setLong ] = useState();
-  const [ weather, setWeather ] = useState(null);
-  const [ city, setCity ] = useState(null);
-  const [ isLoading, setIsLoading ] = useState(true);
-  
-  useEffect(() => {
-    getPosition();
-    getCity();
-    (!!lat && !!long) && getWeather(lat,long);
-  }, [lat, long]); 
-
-  
-  /* RETRIEVE GEOLOCATION */
-
-  const getPosition = async () => {
-    await actualPosition().then(response => {
-      setLat(response.coords.latitude);
-      setLong(response.coords.longitude);
-      
-    });
-  }
-
-  /* RETRIEVE CITY */
-
-  const getCity = async () => {
-    await fetchCity(lat, long).then(response => {
-      setCity(response);
-    });
-  }
-
-  /* RETRIEVE WEATHER */
-
-  const getWeather = async (lat, long) => {
-    setTimeout(() => setIsLoading(false), 2500);
-    await fetchWeather(lat, long).then(response => {
-      setWeather(response);  
-    });
-  }    
+export const ActualPositionWeather = ({ city, weather, isLoading }) => {
 
   // TODO: REFACTORIZAR !ISLOADING 
 
