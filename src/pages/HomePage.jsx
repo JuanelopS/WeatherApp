@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 /* COMPONENT IMPORTS  */
 import { ActualPositionWeather } from '../components/ActualPositionWeather';
 import { NextDaysWeather } from '../components/NextDaysWeather';
+import { Highlights } from '../components/Highlights';
 
 /* LOGICAL IMPORTS  */
 import actualPosition from '../services/actualPosition';
@@ -47,18 +48,18 @@ export const HomePage = () => {
   /* RETRIEVE CITY */
 
   const getCity = async () => {
-    await fetchCity(lat, long).then(response => {
-      setCity(response);
-    });
+    await fetchCity(lat, long)
+      .then(response => setCity(response))
+      .catch(error => console.log('Something went wrong fetching city...', error));
   }
 
   /* RETRIEVE WEATHER */
 
   const getWeather = async (lat, long) => {
     setTimeout(() => setIsLoading(false), 2500);
-    await fetchActualWeather(lat, long).then(response => {
-      setWeather(response);  
-    });
+    await fetchActualWeather(lat, long)
+          .then(response => setWeather(response))
+          .catch(error => console.log('Something went wrong fetching actual weather...', error));
   } 
   
   /* RETRIEVE NEXT WEATHER */
@@ -66,7 +67,8 @@ export const HomePage = () => {
   const getNextWeather = async (lat, long) => {
     setTimeout(() => setIsLoading(false), 2500);
     await fetchNextWeather(lat, long)
-            .then(response => setNextWeather(response));
+            .then(response => setNextWeather(response))
+            .catch(error => console.log('Something went wrong fetching next days weather...', error));
   } 
 
   return (
@@ -77,7 +79,9 @@ export const HomePage = () => {
           isLoading = { isLoading }
         />
       </header>
-      <main>Main</main>
+      <main>
+        <Highlights />
+      </main>
       <aside>
         <div className='actual-weather-buttons'>
           <Button variant='contained' sx={{ backgroundColor: grey[500] }}>Search for places</Button>

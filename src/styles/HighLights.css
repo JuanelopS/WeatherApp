@@ -1,0 +1,26 @@
+.highlights {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.highlights-title {
+  padding: 2rem;
+}
+
+.highlights-container {
+  display: grid;
+  grid-auto-rows: 220px;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 12rem;
+  -moz-column-gap: 6rem;
+       column-gap: 6rem;
+  row-gap: 3rem;
+}
+
+.highlights-section {
+  background-color: #1E213A;
+  border: 1px solid white;
+  padding: 2rem;
+  text-align: center;
+}/*# sourceMappingURL=HighLights.css.map */

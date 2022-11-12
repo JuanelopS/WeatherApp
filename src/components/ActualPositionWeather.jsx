@@ -14,11 +14,12 @@ export const ActualPositionWeather = ({ city, weather, isLoading }) => {
     </div>
   );
 
+  console.log(weather);
   return (
     <div className='geolocation-weather-card'>
+      {/* Weather image */}
+      <img className='weather-image' src={'./weather-images/' + weatherImages[weather.current_weather.weathercode]}/>
       <div className='geolocation-weather-text'>
-        {/* Weather image */}
-        <img className='weather-image' src={'./weather-images/' + weatherImages[weather.current_weather.weathercode]}/>
         <div className='weather-info-container'>
         <h2 className='actual-temp'>{weather.current_weather.temperature}º</h2>  
         <h3>{weatherCodes[weather.current_weather.weathercode]}</h3>

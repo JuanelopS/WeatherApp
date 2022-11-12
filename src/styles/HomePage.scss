@@ -28,7 +28,6 @@
         z-index: 1;
       }
 
-    
       .weather-loading{
         margin-top: 200px;
       }
@@ -43,13 +42,14 @@
         flex-direction: column;
         justify-content: center;
         text-align: center;
+        font-size: 1.3rem;
         gap: 1rem;
         z-index: 1;
         margin-bottom: 5rem;
       }
 
       .actual-temp {
-        font-size: 8rem;
+        font-size: 9rem;
         margin-bottom: 5rem;
       }
     }
@@ -57,7 +57,7 @@
     aside::before {
       content: '';
       position: absolute;
-      background: url('../assets/Cloud-background.png') no-repeat 80% 60%;
+      background: url('../assets/Cloud-background.png') no-repeat 80% 70%;
       opacity: 0.3;
       width: 100%;
       height: 70%;
@@ -70,8 +70,6 @@
 
     header {
       background-color: #100E1D;
-      min-height: 500px;
-      
     }
 }
 
@@ -82,13 +80,13 @@
         'aside header header'
         'aside main main';
       grid-template-columns: 1fr 3fr;
-      grid-template-rows: 2fr 3fr;
-      max-height: 100vh;
+      grid-template-rows: 1fr 2fr;
+      height: 100vh;
     }
 
   header {
     grid-area: header;
-    padding: 0 7rem;
+    padding: 1rem 7rem;
   }
 
   main {
@@ -97,6 +95,8 @@
   
   aside {
     grid-area: aside;
+
+    
   
   }
 }
